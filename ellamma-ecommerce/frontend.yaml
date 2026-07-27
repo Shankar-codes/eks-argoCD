@@ -142,6 +142,7 @@ spec:
       targetPort: 8080 #container Port
 
 ---
+# you must install the AWS load balancer for this or else traffic wont go to dev.ellamma.com
 apiVersion: elbv2.k8s.aws/v1beta1
 kind: TargetGroupBinding
 metadata:
