@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: storage-classes
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/shankar-codes/eks-argoCD.git
+    targetRevision: main # branch name
+    path: storage-classes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true # if you delete from Git, argocd also deletes it from cluster
+      selfHeal: true # Revert the changes that were done manually in cluster, to sync git repo
