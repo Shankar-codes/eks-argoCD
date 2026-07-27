@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespace
+  namespace: argoCD
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/shankar-codes/eks-argoCD.git
