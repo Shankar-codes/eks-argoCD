@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: namespace
-  namespace: argoCD
+  namespace: argocd
 spec:
   project: default
   source:
@@ -11,7 +11,7 @@ spec:
     path: guestbook
   destination:
     server: https://kubernetes.default.svc
-    namespace: argoCD
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true # if you delete from Git, argocd also deletes it from cluster

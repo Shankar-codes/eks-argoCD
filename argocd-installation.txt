@@ -1,0 +1,7 @@
+1. aws configure
+2. kubectl create namespace argocd
+3. kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+4. curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+5. sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+6. rm argocd-linux-amd64
+7. argocd admin initial-password -n argocd # you will get the password
