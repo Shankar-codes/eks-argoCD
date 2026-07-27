@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: namespace
+  name: platform
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/shankar-codes/eks-argoCD.git
     targetRevision: main # branch name
-    path: namespaces # this goes to namespaces and creates the namespaces
+    path: applications # this goes to applications for and creates the namespaces and storage classes
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

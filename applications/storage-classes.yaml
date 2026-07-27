@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/shankar-codes/eks-argoCD.git
     targetRevision: main # branch name
-    path: storage-classes
+    path: storage-classes  # this goes to storage-classes and creates the storage classes
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
