@@ -141,3 +141,15 @@ spec:
       port: 80 #service Port
       targetPort: 8080 #container Port
 
+---
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: TargetGroupBinding
+metadata:
+  name: frontend
+  namespace: ellamma-ecommerce
+spec:
+  serviceRef:
+    name: frontend # route traffic to the awesome-service
+    port: 80
+  targetGroupARN: {{ .Values.tgb.arn }}
+  targetType: ip
